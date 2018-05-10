@@ -116,7 +116,7 @@ public class DefaultMethodTest {
 
 		IcecreamServiceApi client = ReactiveFeign.<IcecreamServiceApi>builder()
 				.webClient(WebClient.create())
-				.options(new ReactiveOptions.Builder()
+				.options(new ReactiveHttpOptions.Builder()
 						.setConnectTimeoutMillis(300)
 						.setReadTimeoutMillis(100).build())
 				.target(IcecreamServiceApi.class,

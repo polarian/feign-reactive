@@ -1,10 +1,12 @@
-package reactivefeign;
+package reactivefeign.cloud;
 
 import com.netflix.hystrix.HystrixObservableCommand;
 import feign.MethodMetadata;
 import feign.Target;
 import org.reactivestreams.Publisher;
 import org.springframework.lang.Nullable;
+import reactivefeign.ReactiveMethodHandler;
+import reactivefeign.ReactiveMethodHandlerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import rx.Observable;

@@ -6,7 +6,6 @@ import com.netflix.client.ClientException;
 import com.netflix.client.DefaultLoadBalancerRetryHandler;
 import com.netflix.client.RequestSpecificRetryHandler;
 import com.netflix.client.RetryHandler;
-import feign.FeignException;
 import feign.RequestLine;
 import feign.RetryableException;
 import org.junit.Before;
@@ -16,6 +15,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactivefeign.client.RetryReactiveHttpClient;
+import reactivefeign.cloud.CloudReactiveFeign;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;

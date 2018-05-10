@@ -19,14 +19,14 @@ package reactivefeign;
 /**
  * @author Sergii Karpenko
  */
-public class ReactiveOptions {
+public class ReactiveHttpOptions {
 
 	private final Integer connectTimeoutMillis;
 	private final Integer readTimeoutMillis;
 	private final Boolean tryUseCompression;
 
-	private ReactiveOptions(Integer connectTimeoutMillis, Integer readTimeoutMillis,
-			Boolean tryUseCompression) {
+	private ReactiveHttpOptions(Integer connectTimeoutMillis, Integer readTimeoutMillis,
+								Boolean tryUseCompression) {
 		this.connectTimeoutMillis = connectTimeoutMillis;
 		this.readTimeoutMillis = readTimeoutMillis;
 		this.tryUseCompression = tryUseCompression;
@@ -72,8 +72,8 @@ public class ReactiveOptions {
 			return this;
 		}
 
-		public ReactiveOptions build() {
-			return new ReactiveOptions(connectTimeoutMillis, readTimeoutMillis,
+		public ReactiveHttpOptions build() {
+			return new ReactiveHttpOptions(connectTimeoutMillis, readTimeoutMillis,
 					tryUseCompression);
 		}
 	}

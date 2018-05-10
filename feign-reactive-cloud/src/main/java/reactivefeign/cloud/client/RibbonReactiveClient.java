@@ -1,10 +1,12 @@
-package reactivefeign.client;
+package reactivefeign.cloud.client;
 
 import com.netflix.loadbalancer.Server;
 import com.netflix.loadbalancer.reactive.LoadBalancerCommand;
 import feign.MethodMetadata;
 import org.reactivestreams.Publisher;
 import org.springframework.lang.Nullable;
+import reactivefeign.client.ReactiveHttpClient;
+import reactivefeign.client.ReactiveHttpRequest;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import rx.Observable;

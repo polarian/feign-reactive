@@ -105,8 +105,7 @@ public class ReactiveFeign {
 	 * ReactiveFeign builder.
 	 */
 	public static class Builder<T> {
-		protected Contract contract = new ReactiveDelegatingContract(
-				new Contract.Default());
+		protected Contract contract = new ReactiveDelegatingContract(new Contract.Default());
 		protected WebClient webClient = WebClient.create();
 		protected ReactiveHttpRequestInterceptor requestInterceptor = request -> request;
 		protected ReactiveStatusHandler statusHandler = new DefaultFeignErrorDecoder(new ErrorDecoder.Default());
@@ -175,7 +174,7 @@ public class ReactiveFeign {
 		 * @param options Feign {@code Request.Options} object
 		 * @return this builder
 		 */
-		public Builder<T> options(final ReactiveOptions options) {
+		public Builder<T> options(final ReactiveHttpOptions options) {
 
 			if (!options.isEmpty()) {
 				ReactorClientHttpConnector connector = new ReactorClientHttpConnector(
@@ -261,7 +260,7 @@ public class ReactiveFeign {
 		}
 	}
 
-	static final class ParseHandlersByName {
+	public static final class ParseHandlersByName {
 		private final Contract contract;
 		private final ReactiveMethodHandlerFactory factory;
 

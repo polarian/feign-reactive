@@ -14,6 +14,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactivefeign.cloud.CloudReactiveFeign;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;

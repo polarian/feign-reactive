@@ -72,7 +72,7 @@ public class RetryReactiveHttpClient implements ReactiveHttpClient {
         };
 	}
 
-	private static Function<Flux<Throwable>, Publisher<?>> wrapWithLog(
+    private static Function<Flux<Throwable>, Publisher<?>> wrapWithLog(
 			Function<Flux<Throwable>, Publisher<Throwable>> retryFunction,
 			String feignMethodTag) {
 		return throwableFlux -> {

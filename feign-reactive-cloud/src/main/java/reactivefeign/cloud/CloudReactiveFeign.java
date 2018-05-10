@@ -1,4 +1,4 @@
-package reactivefeign;
+package reactivefeign.cloud;
 
 import com.netflix.client.ClientFactory;
 import com.netflix.client.RetryHandler;
@@ -14,11 +14,15 @@ import org.reactivestreams.Publisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactivefeign.ReactiveFeign;
+import reactivefeign.ReactiveMethodHandlerFactory;
+import reactivefeign.ReactiveHttpOptions;
+import reactivefeign.ReactiveRetryPolicy;
 import reactivefeign.client.ReactiveClientFactory;
 import reactivefeign.client.ReactiveHttpClient;
 import reactivefeign.client.ReactiveHttpRequestInterceptor;
 import reactivefeign.client.statushandler.ReactiveStatusHandler;
-import reactivefeign.client.RibbonReactiveClient;
+import reactivefeign.cloud.client.RibbonReactiveClient;
 import reactor.core.publisher.Flux;
 
 import java.net.URI;
@@ -175,7 +179,7 @@ public class CloudReactiveFeign extends ReactiveFeign {
         }
 
         @Override
-        public Builder<T> options(final ReactiveOptions options) {
+        public Builder<T> options(final ReactiveHttpOptions options) {
             super.options(options);
             return this;
         }

@@ -65,7 +65,7 @@ public class ReactiveHttpOptionsTest {
 
 		IcecreamServiceApi client = ReactiveFeign.<IcecreamServiceApi>builder()
 				.webClient(webClient)
-				.options(new ReactiveOptions.Builder()
+				.options(new ReactiveHttpOptions.Builder()
 						.setTryUseCompression(true).build())
 				.target(IcecreamServiceApi.class, targetUrl);
 

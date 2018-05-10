@@ -62,7 +62,7 @@ public class ReadTimeoutTest {
 
 		IcecreamServiceApi client = ReactiveFeign.<IcecreamServiceApi>builder()
 				.webClient(WebClient.create())
-				.options(new ReactiveOptions.Builder().setConnectTimeoutMillis(300)
+				.options(new ReactiveHttpOptions.Builder().setConnectTimeoutMillis(300)
 						.setReadTimeoutMillis(100).build())
 				.target(IcecreamServiceApi.class,
 						"http://localhost:" + wireMockRule.port());
